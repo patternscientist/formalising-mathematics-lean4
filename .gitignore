@@ -1,0 +1,21 @@
+# Lean 4 build artifacts
+/build/
+/lakefile.olean
+/.lake/
+lake-packages/
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.DS_Store
+
+# Lean/Lake
+.lake/
+*.olean
+
+# Editors
+*.swp
+*.swo
+.DS_Store
