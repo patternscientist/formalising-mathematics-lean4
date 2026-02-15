@@ -1,0 +1,13 @@
+Reminder: to aid ease of uploading changes made to formalizing mathematics 2026 course code, the following function definition can be used in powershell
+
+function fm-push($sheet, $msg) {
+  $src = "C:\Users\poin\programming\courses\formalising-mathematics-2026\FormalisingMathematics2026\$sheet"
+  $dst = "C:\Users\poin\programming\repos\formalising-mathematics-lean4\2026\$sheet"
+  Copy-Item $src -Destination $dst -Force
+  cd C:\Users\poin\programming\repos\formalising-mathematics-lean4
+  git add -A
+  git commit -m $(if ($msg) { $msg } else { "Update $sheet" })
+  git push
+}
+
+Usage: fm-push "Section01Logic\Sheet1Completed.lean" "Complete Sheet 1 of Section01 Logic; rename Sheet1.lean => Sheet1Completed.lean"
