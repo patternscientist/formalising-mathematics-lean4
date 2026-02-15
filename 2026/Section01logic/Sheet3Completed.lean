@@ -90,7 +90,8 @@ example : ¬¬False → False := by
   intro hF
   exact hF
 
-example : ¬¬P → P := by -- this isn't true constructively, which is a clue `by_cases` will be needed
+example : ¬¬P → P := by -- this isn't true constructively,
+-- which is a clue `by_cases` will be needed @patternscientist
   intro hnnP
   change (P→False)→False at hnnP
   by_cases h : P
